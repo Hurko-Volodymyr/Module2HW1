@@ -29,14 +29,15 @@
                 else if (index == 3)
                 {
                     Actions.Third();
-                    if (result.Status == false)
-                    {
-                        Logger.Instance.Log(DateTime.Now, LogType.Error, nameof(Actions.Third) + "/ Action failed by a reason: " + Actions.ErrorMessage);
-                    }
                 }
                 else
                 {
                     Console.WriteLine("Error");
+                }
+
+                if (result.Status == false)
+                {
+                    Logger.Instance.Log(DateTime.Now, LogType.Error, nameof(Actions.Third) + "/ Action failed by a reason: " + Actions.ErrorMessage);
                 }
 
                 string str = sw.GetStringBuilder().ToString();
