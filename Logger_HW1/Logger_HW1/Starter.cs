@@ -10,8 +10,8 @@
         /// </summary>
         public void Run()
         {
-            Random rnd = new Random();
-            Result result = new Result();
+            Random rnd = new ();
+            Result result = new ();
             StringWriter sw = new ();
             Console.SetOut(sw);
 
@@ -20,15 +20,15 @@
                 int index = rnd.Next(1, 4);
                 if (index == 1)
                 {
-                    Actions.First();
+                    result = Actions.First();
                 }
                 else if (index == 2)
                 {
-                    Actions.Second();
+                    result = Actions.Second();
                 }
                 else if (index == 3)
                 {
-                    Actions.Third();
+                   result = Actions.Third();
                 }
                 else
                 {
@@ -37,7 +37,7 @@
 
                 if (result.Status == false)
                 {
-                    Logger.Instance.Log(DateTime.Now, LogType.Error, nameof(Actions.Third) + "/ Action failed by a reason: " + Actions.ErrorMessage);
+                    Logger.Instance.Log(DateTime.Now, LogType.Error, nameof(Actions.Third) + "/ Action failed by a reason: " + result.ErrorMessage);
                 }
 
                 string str = sw.GetStringBuilder().ToString();

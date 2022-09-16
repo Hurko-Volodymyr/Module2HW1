@@ -12,11 +12,6 @@ namespace Logger_HW1
     public class Actions
     {
         /// <summary>
-        /// Gets or sets starts the App.
-        /// </summary>
-        public static string? ErrorMessage { get; set; }
-
-        /// <summary>
         /// First.
         /// </summary>
         /// <returns>Result. </returns>
