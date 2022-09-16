@@ -11,7 +11,7 @@
         public void Run()
         {
             Random rnd = new Random();
-
+            Result result = new Result();
             StringWriter sw = new ();
             Console.SetOut(sw);
 
@@ -29,7 +29,10 @@
                 else if (index == 3)
                 {
                     Actions.Third();
-                    Logger.Instance.Log(DateTime.Now, LogType.Error, nameof(Actions.Third) + "/ Action failed by a reason: " + Actions.ErrorMessage);
+                    if (result.Status == false)
+                    {
+                        Logger.Instance.Log(DateTime.Now, LogType.Error, nameof(Actions.Third) + "/ Action failed by a reason: " + Actions.ErrorMessage);
+                    }
                 }
                 else
                 {
